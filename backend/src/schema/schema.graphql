@@ -1,0 +1,22 @@
+type Grant {
+  id: ID!
+  name: String!
+  foundation: String!
+  amount: Int!
+  status: String!
+  deadline: String!
+  matchDate: String!
+}
+
+type Query {
+  grants: [Grant!]!
+}
+
+type Mutation {
+  updateGrantStatus(id: ID!, status: String!): Grant!
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
